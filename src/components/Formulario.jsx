@@ -17,7 +17,7 @@ const Formulario = () => {
   const componentRef = useRef();
 
   const [content, setContent] = useState('')
-  const [name, setName] = useState('');
+  const [name, setName] = useState('Alfonso Peña');
 
   const handleChangeName = (event) => {
     setName(event.target.value);
@@ -34,7 +34,7 @@ const Formulario = () => {
   return (
     <Container sx={{py: 6}}  maxWidth="md" style={{minHeight: 'calc(100vh - 128px)'}} >
       <form>
-        <Typography sx={{ textAlign: 'center', fontWeight: 'bold', mb: 5 }} component='h1' variant='h4' >Comprobante de Entrega</Typography>
+        <Typography sx={{ textAlign: 'center', fontWeight: 'normal', mb: 5 }} component='h1' variant='h4' >Comprobante de Entrega</Typography>
         <FormControl fullWidth sx={{ mb: 3 }}>
           <InputLabel id="demo-simple-select-label">Nombre del colaborador de ITB:</InputLabel>
           <Select
@@ -44,8 +44,13 @@ const Formulario = () => {
             label="Nombre del colaborador de ITB:"
             onChange={handleChangeName}
           >
+            <MenuItem value={'Alfonso Peña'}>Alfonso Peña</MenuItem>
+            <MenuItem value={'Edwin Ilovares'}>Edwin Ilovares</MenuItem>
             <MenuItem value={'Jorge Cruz'}>Jorge Cruz</MenuItem>
             <MenuItem value={'Kelvin Sagastume'}>Kelvin Sagastume</MenuItem>
+            <MenuItem value={'Luis Amador'}>Luis Amador</MenuItem>
+            <MenuItem value={'Wesly Lopez'}>Wesly Lopez</MenuItem>
+            <MenuItem value={'Wilson Mendez'}>Wilson Mendez</MenuItem>
           </Select>
         </FormControl>
         <JoditEditor
