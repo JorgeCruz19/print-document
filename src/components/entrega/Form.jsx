@@ -4,30 +4,11 @@ import { Container, Typography } from '@mui/material'
 import Divider from '@mui/material/Divider';
 import Box from '@mui/material/Box';
 
+import {showTime, showDate } from '../../utils/getDateAndTime'
 import TableBasic from './Table'
-import Logo from '../assets/logo.png'
+import Logo from '../../assets/logo.png'
 
-const Design = forwardRef(({name, content}, ref) => {
-  let date = new Date();
-
-  const showTime= () => {
-    let hour = date.getHours();
-    let minutes = date.getMinutes();
-    let amPM = hour >= 12 ? 'PM' : 'AM';
-    hour = hour % 12 || 12;
-
-    return `${hour}:${addZero(minutes)} ${amPM}`;
-  }
-  const showDate = () =>{
-    let day = date.getDate();
-    let month = (date.getMonth()+1);
-    let year = date.getFullYear();
-
-    return `${day}/${month}/${year}`
-  }
-  const addZero = (n) => {
-    return (parseInt(n, 10) < 10 ? '0' : '') + n;
-  }
+const Form = forwardRef(({name, content}, ref) => {
 
   return (
     <Container sx={{display: 'none'}}>
@@ -52,4 +33,4 @@ const Design = forwardRef(({name, content}, ref) => {
   )
 })
   
-export default Design
+export default Form

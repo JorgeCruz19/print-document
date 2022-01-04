@@ -1,12 +1,9 @@
-import Formulario from "./components/Formulario";
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+import { Router } from "./routers/Router";
+
 const App = () => {
   return (
     <>
-      <Navbar/>
-      <Formulario />
-      <Footer/>
+      <Router />
     </>
   );
 }

@@ -10,9 +10,9 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 
-import Design from './Design'
+import Form from './Form'
 
-const Formulario = () => {
+const Prestamo = () => {
   const editor = useRef(null)
   const componentRef = useRef();
 
@@ -34,7 +34,7 @@ const Formulario = () => {
   return (
     <Container sx={{py: 6}}  maxWidth="md" style={{minHeight: 'calc(100vh - 128px)'}} >
       <form>
-        <Typography sx={{ textAlign: 'center', fontWeight: 'normal', mb: 5 }} component='h1' variant='h4' >Comprobante de Entrega</Typography>
+        <Typography sx={{ textAlign: 'center', fontWeight: 'normal', mb: 5 }} component='h1' variant='h5' >Comprobante de Prestamo</Typography>
         <FormControl fullWidth sx={{ mb: 3 }}>
           <InputLabel id="demo-simple-select-label">Nombre del colaborador de ITB:</InputLabel>
           <Select
@@ -63,14 +63,14 @@ const Formulario = () => {
         />
         <ReactToPrint
           documentTitle='ITB'
-          pageStyle= "@page { size: auto;  margin: 15mm 20mm; } @media print { body { -webkit-print-color-adjust: exact; } }"
+          pageStyle= "@page { size: auto;  margin: 4mm 20mm; } @media print { body { -webkit-print-color-adjust: exact; } }"
           trigger={() => <Button variant="contained" sx={{mt:3, width: '100%'}} >Imprimir</Button>}
           content={() => componentRef.current}
         />
       </form>
-    <Design ref={componentRef} name={name} content={content} />         
+    <Form ref={componentRef} name={name} content={content} />         
     </Container>
   )
 }
 
-export default Formulario
+export default Prestamo
